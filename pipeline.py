@@ -68,11 +68,17 @@ def run_step(args, out=None, err=None):
   print(out, err)
   if out != None and os.path.isfile(out):
     eprint('Results already exist for stdout={}'.format(out))
-    return #TODO uncomment
+    return
 
   if type(out) is str:
+    out_dir = os.path.dirname(out)
+    if not os.path.exists(out_dir):
+      os.makedirs(out_dir)
     out = open(out, 'w')
   if type(err) is str:
+    err_dir = os.path.dirname(err)
+    if not os.path.exists(err_dir):
+      os.makedirs(err_dir)
     err = open(err, 'w')
   try:
     p = subprocess.Popen(args, stdout=out, stderr=err)
@@ -150,6 +156,9 @@ run_step([
   reduced_overlaps_file,
   reads_info_file
 ], out=mcl_input_file)
+
+if not os.path.exists(os.path.dirname(mcl_out_file)):
+  os.makedirs(os.path.dirname(mcl_out_file))
 
 if not os.path.isfile(mcl_out_file):
   run_step([
