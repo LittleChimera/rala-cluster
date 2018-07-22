@@ -4,6 +4,3 @@
 [submodule "vendor/minimap2"]
 	path = vendor/minimap2
 	url = https://github.com/lh3/minimap2
-[submodule "vendor/ezra"]
-	path = vendor/ezra
-	url = https://gitlab.com/Krpa/ezra.git
