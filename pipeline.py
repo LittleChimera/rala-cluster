@@ -35,7 +35,7 @@ cluster_results_exec = './cluster_results.py'
 mcl_exec = './vendor/mcl/src/shmcl/mcl'
 sra_exec = './sra.py'
 minimap2_exec = './vendor/minimap2/minimap2'
-ezra_exec = './vendor/ezra/build/ezra'
+ezra_exec = './vendor/ezra/ezra'
 ezra_minimap_reduce_exec = './ezra_filter_group_mappings.py'
 ezra_adjust_layout_exec = './ezra_adjust_ctg_values.py'
 

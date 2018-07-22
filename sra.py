@@ -6,7 +6,7 @@ import sys, os, subprocess, shutil
 def eprint(*args, **kwargs):
   print(*args, file=sys.stderr, **kwargs)
 
-rala_path = "./vendor/rala/rala"
+rala_path = "./vendor/rala/bin/rala"
 
 sequence_path = sys.argv[1]
 overlaps_path = sys.argv[2]
@@ -34,6 +34,7 @@ def run_rala(group_id):
     sys.exit(1)
 
   try:
+    print(" ".join(rala_params))
     p = subprocess.Popen(rala_params, stdout=layout_file)
   except OSError:
     eprint('[Ra::run] error: unable to run rala!')
